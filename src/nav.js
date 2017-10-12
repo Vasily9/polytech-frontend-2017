@@ -5,6 +5,7 @@ class Nav extends Component{
 
 constructor(props) {
 super(props);
+this.clickMe=this.clickMe.bind(this);
 this.state = {
 	isOpened:false,
 };
@@ -21,7 +22,7 @@ render() {
 	{dropdownText = <div>Вы нажали на меня</div>;}
 	
 return (
-<div onClick={this.clickMe.bind(this)}>
+<div onClick={this.clickMe}>
 	Нажмите на меня!
 	{dropdownText}
 </div>
