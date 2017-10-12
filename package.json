@@ -1,16 +1,50 @@
 {
-  "name": "polytech-frontend-2017",
-  "version": "0.1.0",
-  "private": true,
+  "name": "test-react-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open",
+    "prettify": "prettier --write '{index.js,src/**/*.js}'",
+    
+    /*husky выполнит эту команду, когда вы попытаетесь сделать git commit */
+    "precommit": "lint-staged"
+  },
+  
+  /* это настройка lint-staged: указано, что файлы index.js и содержимое src будут проверены и исправлены с помощью prettier --write */
+  "lint-staged": {
+    "{index.js,src/**/*.js}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "react",
+    "examplr"
+  ],
+  "author": "a.chudesnov",
+  "license": "ISC",
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "webpack": "^3.6.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    
+    /* нужно для git hooks */
+    "husky": "^0.14.3",
+    
+    /* нужно для проверки файлов, добавленных через git add */
+    "lint-staged": "^4.2.3",
+    
+    /* собственно инструмент для code style */
+    "prettier": "1.7.4",
+    "webpack-dev-server": "^2.9.1"
   }
 }
