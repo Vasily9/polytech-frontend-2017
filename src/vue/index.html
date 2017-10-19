@@ -1,34 +1,47 @@
 
 <!DOCTYPE html>
+
+
 <html>
+
+
 <head>
-<meta charset = "utf-8">
-<title>Vue</title>
-<link href="index.css" rel="stylesheet"/>
-<script src="https://unpkg.com/vue"></script>
+  <meta charset="utf-8">
+
+  <title>Vue</title>
+  <link href="index.css"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/vue" />
+
 </head>
+
 <body>
 
+  <div id="vue-app">
+    <h1>Vue</h1>
+    <label>Name:</label>
+    <input type="text"
+      v-model="name">
 
-<div id="vue-app">
+    <span>{{name}}</span>
+    <br>
 
-<h1>Vue</h1>
+    <br>
 
-<label>Name:</label>
-<input type="text" v-model="name"/>
-<span>{{name}}</span>
-<br></br>
-<label>Surname:</label>
-<input type ="text" v-model="surname"/>
-<span>{{surname}}</span>
-<br></br>
-<label>Fullname:</label>
-<span>{{fullname}}</span>
+    <label>Surname:</label>
+    <input type="text"
+      v-model="surname">
 
-</div>
+    <span>{{surname}}</span>
+    <br>
 
-<script src="app.js"></script>
+    <br>
 
+    <label>Fullname:</label>
+    <span>{{fullname}}</span>
+  </div>
+  <script src="app.js" />
 
 </body>
 </html>
